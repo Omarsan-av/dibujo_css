@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+
+         body 
+         {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 100vh;
+            background-color: #d8cbda;
+         }
+
+         .layer-1 
+         {
+            position: absolute;
+         }
+
+         .left-ear--outer
+         {
+            background: white;
+            border-radius: 90%;
+            width: 100px;
+            height: 300px;
+            position: absolute;
+            left: -8px;
+            top: -44%;
+            transform: rotate(-25deg);
+            border: 2px solid #c5c5c5;
+            box-sizing: border-box;
+         }
+
+         .right-ear--outer
+         {
+            background: white;
+            border-radius: 90%;
+            width: 100px;
+            height: 300px;
+            position: absolute;
+            right: -8px;
+            top: -44%;
+            transform: rotate(25deg);
+            border: 2px solid #c5c5c5;
+            box-sizing: border-box;
+         }
+
+         .left-ear--inner
+         {
+            background: pink;
+            border-radius: 50%;
+            width: 50px;
+            height: 220px;
+            position: absolute;
+            left: 8px;
+            top: -38%;
+            transform: rotate(-25deg);
+            box-sizing: border-box;
+            border: 2px solid #c5c5c5;
+         }
+
+         .right-ear--inner
+         {
+            background: pink;
+            border-radius: 50%;
+            width: 50px;
+            height: 220px;
+            position: absolute;
+            right: 9px;
+            top: -38%;
+            transform: rotate(25deg);
+            box-sizing: border-box;
+            border: 2px solid #c5c5c5;
+         }
+
+         .head  
+         {
+            width: 280px;
+            height: 380px;
+            background-color: white;
+            -moz-border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            -webkit-border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            border: 2px solid #c5c5c5;
+         }
+
+         .circle 
+         {  
+            width: 324px;
+            height: 259px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            top: 33%;
+            right: -8%;
+         }
+
+         .head__eye 
+         {
+            width: 57px;
+            height: 75px;
+            border-radius: 50%;
+            background: white;
+            top: 130px;
+            position: absolute;
+            box-sizing: border-box;
+            border: 2px solid gray;
+         }
+
+         .head__eye.head__eye--left
+         {
+            left: 63px;
+         }
+
+         .head__eye.head__eye--right
+         {
+            right: 63px;
+         }
+
+         .pupil 
+         {
+            width: 45px;
+            height: 60px;
+            background: linear-gradient(to bottom, #0b0044, #00d1eb);
+            border-radius: 50%;
+            position: absolute;
+            top: 11px;
+            left: 4px;
+            border-bottom-right-radius: 45%;
+         }
+
+         .pupil--black
+         {
+            width: 35px;
+            height: 40px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 12px;
+            left: 5px;
+         }
+
+         .pupil--white 
+         {
+            width: 10.5px;
+            height: 13px;
+            border-radius: 50%;
+            background: white;
+            position: absolute;
+            left: 3px;
+            top: 2px;
+            box-sizing: border-box;
+            border: 2px solid #c5c5c5;
+         }
+
+         /* .nourse 
+         {
+            width: 90px;
+            height: 60px;
+            background: red;
+            position: absolute;
+            left: 34%;
+            top: 56%;
+            border-radius: 50%;
+            z-index: 2;
+         } */
+
+         .nourse
+         {
+            position: relative;
+            width: 35px;
+            height: 35px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background-color: #fd003a;
+            border-bottom-right-radius: 80%;
+            top: 245px;
+            left: 122px;
+            z-index: 2;
+         }
+         
+         .nourse:before,
+         .nourse:after
+         {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            content: '';
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #fd003a;
+         }
+
+         
+         .nourse:before
+         {
+            bottom: 0px;
+            left: -30px;
+            border-top-left-radius: 70%;
+         }
+
+         .nourse:after
+         {
+            top: -30px;
+            right: 0px;
+            border-top-left-radius: 70%;
+         }
+
+         .mouth
+         {
+            width: 80px;
+            height: 60px;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: 245px;
+            z-index: 1;
+         }
+
+         .mouth.left
+         {
+            left: 58px;
+            border-top: none;
+            border-left: none;
+         }
+
+         .mouth.right 
+         {
+            right: 58px;
+            border-top: none;
+            border-right: none;
+         }
+
+         .mustache 
+         {
+            width: 240px;
+            height: 100px;
+            border: solid 1.5px #000;
+            border-color: #000 transparent transparent transparent;
+            border-radius: 50%/50px 100px 0 0;
+            position: absolute;
+            z-index: 2;
+         }
+
+         .right--top::before, .right--bottom::before, .left--top::before, .left--bottom::before
+         {
+            width: 3px;
+            height: 3px;
+            background-color: black;
+            position: absolute;
+            content: "";
+            left: 17px;
+            top: 19px;
+            border-radius: 50%;
+         }
+
+         .mustache.right--top
+         {
+            top: 210px;
+            left: 140px;
+         }
+
+         .mustache.right--bottom 
+         {
+            top: 230px;
+            left: 140px;
+         }
+
+         .mustache.left--top
+         {
+            top: 210px;
+            transform: rotateY(180deg);
+            left: -110px;    
+         }
+
+         .mustache.left--bottom 
+         {
+            top: 230px;
+            transform: rotateY(180deg);
+            left: -110px;
+         }
+
+         .hand 
+         {
+            width: 150px;
+            height: 100px;
+            background: white;
+            position: relative;
+            border-radius: 50%;
+            border: 2px solid #c5c5c5;
+            box-sizing: border-box;
+            overflow: hidden;
+         }
+
+         .hand.left
+         {
+            left: -160px;
+         }
+
+         .hand.right 
+         {
+            right: -160px;
+         }
+
+         .finger 
+         {
+            width: 50px;
+            background: white;
+            height: 100px;
+            border-radius: 50%;
+            border: none;
+            border-right: 4px solid #c5c5c5;
+            position: absolute;
+            top: 35px;
+         }
+
+         .finger.left 
+         {
+            transform: skew(-15deg,10deg);
+            left: -6px;
+         }
+
+         .finger.right 
+         {
+            transform: rotate(165deg);
+            left: 95px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="hand left">
+         <div class="finger left"></div>
+         <div class="finger right"></div>
+      </div>
+      <div class="hand right">
+         <div class="finger left"></div>
+         <div class="finger right"></div>
+      </div>
+      
+      <div class="layer-1">
+         <div class="left-ear--outer"></div>
+         <div class="left-ear--inner"></div>
+         <div class="right-ear--outer"></div>
+         <div class="right-ear--inner"></div>
+
+         <div class="head">
+            <div class="circle"></div>
+            
+            <div class="head__eye head__eye--left">
+               <div class="pupil">
+                  <div class="pupil--black">
+                     <div class="pupil--white"></div>
+                  </div>
+               </div>
+            </div>
+            <div class="head__eye head__eye--right">
+               <div class="pupil">
+                  <div class="pupil--black">
+                     <div class="pupil--white"></div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="nourse"></div>
+
+            <div class="mustache left--top"></div>
+            <div class="mustache left--bottom"></div>
+
+            <div class="mustache right--top"></div>
+            <div class="mustache right--bottom"></div>
+
+            <div class="mouth left"></div>
+            <div class="mouth right"></div>
+         </div>
+      </div>
+   </body>
+</html>
