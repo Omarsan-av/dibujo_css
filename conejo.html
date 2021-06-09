@@ -1,29 +1,42 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
    <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Conejo con CSS</title>
+      <title>Document</title>
       <style>
-         body 
-         {
+         html {
+            font-size: 6.25%;
+         }
+
+         body {
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: flex-end;
             height: 100vh;
-            background-color: #d8cbda;
+            width: 100%;
+            background-color: lightgray;
          }
 
-         .rabbit_head 
-         {
+         .rabbit {
+            width: 578px;
+            height: 81.3px;
+            display: flex;
             position: absolute;
          }
 
-         .left-ear--outer
-         {
+
+         .rabbit_head {
+            position: absolute;
+            bottom: 0;
+            left: 142px;
+         }
+
+         .left-ear--outer {
             background: white;
             border-radius: 90%;
             width: 115px;
@@ -36,8 +49,7 @@
             box-sizing: border-box;
          }
 
-         .right-ear--outer
-         {
+         .right-ear--outer {
             background: white;
             border-radius: 90%;
             width: 115px;
@@ -50,8 +62,7 @@
             box-sizing: border-box;
          }
 
-         .left-ear--inner
-         {
+         .left-ear--inner {
             background: pink;
             border-radius: 50%;
             width: 50px;
@@ -64,8 +75,7 @@
             border: 2px solid #c5c5c5;
          }
 
-         .right-ear--inner
-         {
+         .right-ear--inner {
             background: pink;
             border-radius: 50%;
             width: 50px;
@@ -78,9 +88,8 @@
             border: 2px solid #c5c5c5;
          }
 
-         .head  
-         {
-            width: 280px;
+         .head {
+            width: 290px;
             height: 380px;
             background-color: white;
             -moz-border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
@@ -90,19 +99,17 @@
             border: 2px solid #c5c5c5;
          }
 
-         .oval 
-         {  
+         .oval {
             width: 324px;
             height: 259px;
             border-radius: 50%;
             background: white;
             position: absolute;
             top: 33%;
-            right: -8%;
+            right: -6%;
          }
 
-         .head__eye 
-         {
+         .head__eye {
             width: 57px;
             height: 75px;
             border-radius: 50%;
@@ -113,18 +120,15 @@
             border: 2px solid gray;
          }
 
-         .head__eye.head__eye--left
-         {
+         .head__eye.head__eye--left {
             left: 63px;
          }
 
-         .head__eye.head__eye--right
-         {
+         .head__eye.head__eye--right {
             right: 63px;
          }
 
-         .pupil 
-         {
+         .pupil {
             width: 45px;
             height: 60px;
             background: linear-gradient(to bottom, #0b0044, #00d1eb);
@@ -135,8 +139,7 @@
             border-bottom-right-radius: 45%;
          }
 
-         .pupil--black
-         {
+         .pupil--black {
             width: 35px;
             height: 40px;
             background: black;
@@ -146,8 +149,7 @@
             left: 5px;
          }
 
-         .pupil--white 
-         {
+         .pupil--white {
             width: 10.5px;
             height: 13px;
             border-radius: 50%;
@@ -159,8 +161,7 @@
             border: 2px solid #c5c5c5;
          }
 
-         .nourse
-         {
+         .nourse {
             position: relative;
             width: 35px;
             height: 35px;
@@ -172,13 +173,12 @@
             background-color: #a22929;
             border-bottom-right-radius: 80%;
             top: 245px;
-            left: 122px;
+            left: 128px;
             z-index: 2;
          }
-         
+
          .nourse:before,
-         .nourse:after
-         {
+         .nourse:after {
             position: absolute;
             width: 50px;
             height: 50px;
@@ -190,96 +190,74 @@
             background-color: #a22929;
          }
 
-         
-         .nourse:before
-         {
+
+         .nourse:before {
             bottom: 0px;
             left: -30px;
             border-top-left-radius: 70%;
          }
 
-         .nourse:after
-         {
+         .nourse:after {
             top: -30px;
             right: 0px;
             border-top-left-radius: 70%;
          }
 
-         .mouth
-         {
+         .mouth {
             width: 80px;
             height: 60px;
-            border: 2px solid black;
+            border: 4px solid black;
             border-radius: 50%;
             position: absolute;
             top: 245px;
             z-index: 1;
          }
 
-         .mouth.left
-         {
-            left: 58px;
+         .mouth.left {
+            left: 61.5px;
             border-top: none;
             border-left: none;
          }
 
-         .mouth.right 
-         {
-            right: 58px;
+         .mouth.right {
+            right: 61.5px;
             border-top: none;
             border-right: none;
          }
 
-         .mustache 
-         {
+         .mustache {
             width: 200px;
             height: 100px;
             border: solid 3.5px;
-            border-color: #888 transparent transparent transparent;
+            border-color: #655f5f transparent transparent transparent;
             border-radius: 50%/20px 100px 0 0;
             position: absolute;
             z-index: 2;
          }
 
-         /* .right--top::before, .right--bottom::before, .left--top::before, .left--bottom::before
-         {
-            width: 3px;
-            height: 3px;
-            background-color: #888;
-            position: absolute;
-            content: "";
-            left: 17px;
-            top: 19px;
-            border-radius: 50%;
-         } */
-
-         .mustache.right--top
-         {
+         .mustache.right--top {
             top: 200px;
-            left: 181px;
+            left: 192px;
             border-radius: 50%/50px 65px 0 0;
             transform: skewY(-5deg) rotateY(180deg);
          }
 
-         .mustache.right--bottom 
-         {
+         .mustache.right--bottom {
             width: 190px;
             top: 255px;
-            left: 180px;
+            left: 192px;
             border-radius: 50%/20px 70px 0px 0px;
             transform: skewY(20deg) rotateY(180deg);
          }
 
-         .mustache.left--top
-         {
+         .mustache.left--top {
             top: 200px;
-            left: -110px;    
+            left: -110px;
             border-radius: 50%/50px 65px 0 0;
             transform: skewY(5deg);
          }
 
-         .mustache.left--bottom 
-         {
+         .mustache.left--bottom {
             width: 190px;
             top: 255px;
             left: -97px;
@@ -287,30 +265,27 @@
             transform: skewY(-20deg);
          }
 
-         .hand 
-         {
+         .hand {
             width: 150px;
             height: 100px;
             background: white;
-            position: relative;
+            position: absolute;
             border-radius: 50%;
             border: 2px solid #c5c5c5;
             box-sizing: border-box;
             overflow: hidden;
+            bottom: 0;
          }
 
-         .hand.left
-         {
-            left: -160px;
+         .hand.left {
+            left: 0;
          }
 
-         .hand.right 
-         {
-            right: -160px;
+         .hand.right {
+            right: 0;
          }
 
-         .finger 
-         {
+         .finger {
             width: 50px;
             background: white;
             height: 100px;
@@ -321,64 +296,66 @@
             top: 35px;
          }
 
-         .finger.left 
-         {
-            transform: skew(-15deg,10deg);
+         .finger.left {
+            transform: skew(-15deg, 10deg);
             left: -6px;
          }
 
-         .finger.right 
-         {
+         .finger.right {
             transform: rotate(165deg);
             left: 95px;
          }
       </style>
    </head>
+
    <body>
-      <div class="hand left">
-         <div class="finger left"></div>
-         <div class="finger right"></div>
-      </div>
+      <div class="rabbit">
 
-      <div class="hand right">
-         <div class="finger left"></div>
-         <div class="finger right"></div>
-      </div>
-      
-      <div class="rabbit_head">
-         <div class="left-ear--outer"></div>
-         <div class="left-ear--inner"></div>
-         <div class="right-ear--outer"></div>
-         <div class="right-ear--inner"></div>
+         <div class="hand left">
+            <div class="finger left"></div>
+            <div class="finger right"></div>
+         </div>
 
-         <div class="head">
-            <div class="oval"></div>
-            
-            <div class="head__eye head__eye--left">
-               <div class="pupil">
-                  <div class="pupil--black">
-                     <div class="pupil--white"></div>
+         <div class="rabbit_head">
+            <div class="left-ear--outer"></div>
+            <div class="left-ear--inner"></div>
+            <div class="right-ear--outer"></div>
+            <div class="right-ear--inner"></div>
+
+            <div class="head">
+               <div class="oval"></div>
+
+               <div class="head__eye head__eye--left">
+                  <div class="pupil">
+                     <div class="pupil--black">
+                        <div class="pupil--white"></div>
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="head__eye head__eye--right">
-               <div class="pupil">
-                  <div class="pupil--black">
-                     <div class="pupil--white"></div>
+               <div class="head__eye head__eye--right">
+                  <div class="pupil">
+                     <div class="pupil--black">
+                        <div class="pupil--white"></div>
+                     </div>
                   </div>
                </div>
+
+               <div class="nourse"></div>
+
+               <div class="mustache left--top"></div>
+               <div class="mustache left--bottom"></div>
+
+               <div class="mustache right--top"></div>
+               <div class="mustache right--bottom"></div>
+
+               <div class="mouth left"></div>
+               <div class="mouth right"></div>
             </div>
+         </div>
 
-            <div class="nourse"></div>
-
-            <div class="mustache left--top"></div>
-            <div class="mustache left--bottom"></div>
-
-            <div class="mustache right--top"></div>
-            <div class="mustache right--bottom"></div>
-
-            <div class="mouth left"></div>
-            <div class="mouth right"></div>
+         <div class="hand right">
+            <div class="finger left"></div>
+            <div class="finger right"></div>
          </div>
       </div>
    </body>
